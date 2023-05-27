@@ -1,4 +1,4 @@
-# Guestbook
+# johncms/guestbook
 
 The Guestbook Module for JohnCMS
 
