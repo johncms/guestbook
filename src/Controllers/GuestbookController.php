@@ -143,7 +143,7 @@ class GuestbookController extends BaseController
         }
         // Request cleaning options
         return $this->render->render('johncms/guestbook::clear', [
-            'actionUrl' => route('guestbook.clean.store'),
+            'actionUrl' => route('guestbook.clean'),
         ]);
     }
 
@@ -181,7 +181,7 @@ class GuestbookController extends BaseController
         } else {
             return $this->render->render('johncms/guestbook::confirm_delete', [
                 'id'        => $id,
-                'actionUrl' => route('guestbook.delete.store', ['id' => $id]),
+                'actionUrl' => route('guestbook.delete', ['id' => $id]),
             ]);
         }
 
@@ -244,7 +244,7 @@ class GuestbookController extends BaseController
                 'message'   => $message,
                 'text'      => htmlspecialchars($form_data['message']),
                 'errors'    => $errors,
-                'actionUrl' => route('guestbook.edit.store', ['id' => $id]),
+                'actionUrl' => route('guestbook.edit', ['id' => $id]),
                 'backUrl'   => $this->baseUrl,
                 'uploadUrl' => route('guestbook.uploadFile'),
             ]
@@ -307,7 +307,7 @@ class GuestbookController extends BaseController
                 'message'    => $message,
                 'errors'     => $errors ?? [],
                 'reply_text' => htmlspecialchars($message->reply_text),
-                'actionUrl'  => route('guestbook.reply.store', ['id' => $id]),
+                'actionUrl'  => route('guestbook.reply', ['id' => $id]),
                 'backUrl'    => $this->baseUrl,
                 'uploadUrl'  => route('guestbook.uploadFile'),
             ]
